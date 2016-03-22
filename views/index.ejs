@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boilerplate</title>
+
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-theme.css" media="screen" title="no title" charset="utf-8">
+
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+
+    <link rel="stylesheet" href="libs/leaflet/dist/leaflet.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="libs/leaflet.markercluster/dist/MarkerCluster.Default.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="libs/leaflet.markercluster/dist/MarkerCluster.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="libs/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.css" media="screen" title="no title" charset="utf-8">
+
+
+
+    <script src="libs/jquery/dist/jquery.js" charset="utf-8"></script>
+
+    <script src="libs/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
+
+    <script src="libs/leaflet/dist/leaflet.js" charset="utf-8"></script>
+    <script src="libs/leaflet.markercluster/dist/leaflet.markercluster.js" charset="utf-8"></script>
+    <script src="libs/leaflet-groupedlayercontrol/dist/leaflet.groupedlayercontrol.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="form-group">
+          <label for="username"></label>
+          <input type="text" class="form-control" id="username" placeholder="">
+          <p class="help-block">Help text here.</p>
+        </div>
+      </div>
+    </nav>
+
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script>
+      var socket = io.connect('//localhost:8081');
+      // var socket = io.connect('//localhost');
+
+      socket.send('bau');
+
+      socket.on('eveniment', function (data) {
+        socket.emit('eveniment', data);
+      });
+
+    </script>
+  </body>
+</html>
